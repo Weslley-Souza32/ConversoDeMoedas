@@ -105,12 +105,15 @@ namespace ConversoDeMoedas1
         #region Calculo da conversão do Real para outra moeda.
         private void btnConverter_Click(object sender, EventArgs e)
         {
-            switch (cmbPaises.Text)
+
+            if (!string.IsNullOrEmpty(txtValorReal.Text) && !string.IsNullOrEmpty(cmbPaises.Text))
             {
-                case "Peso Argentino":
-                    try
-                    {
-                        double valor;
+                double valor;
+
+                switch (cmbPaises.Text)
+                {
+                    case "Peso Argentino":
+
                         double pesoArgentino = 0.054;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -121,18 +124,10 @@ namespace ConversoDeMoedas1
                         pictureBoxPais.BackgroundImage = Properties.Resources.argentina;
                         pictureBoxPais.Visible = true;
 
-                    }
-                    catch (Exception ex)
-                    {
+                        break;
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
+                    case "Euro":
 
-                case "Euro":
-                    try
-                    {
-                        double valor;
                         double euro = 6.15;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -142,18 +137,11 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.spain;
                         pictureBoxPais.Visible = true;
-                    }
-                    catch (Exception ex)
-                    {
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
+                        break;
 
-                case "Libra Esterlina":
-                    try
-                    {
-                        double valor;
+                    case "Libra Esterlina":
+
                         double libraEsterlina = 7.05;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -163,19 +151,11 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.united;
                         pictureBoxPais.Visible = true;
-                    }
-                    catch (Exception)
-                    {
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        break;
 
-                    break;
+                    case "Lira Turca":
 
-                case "Lira Turca":
-                    try
-                    {
-                        double valor;
                         double liraTruca = 0.59;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -185,19 +165,11 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.turkey;
                         pictureBoxPais.Visible = true;
-                    }
-                    catch (Exception)
-                    {
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        break;
 
-                    break;
+                    case "Franco Suiço":
 
-                case "Franco Suiço":
-                    try
-                    {
-                        double valor;
                         double fracoSuico = 5.56;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -207,18 +179,13 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.switzerland;
                         pictureBoxPais.Visible = true;
-                    }
-                    catch (Exception)
-                    {
 
                         MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
 
-                case "Dolar Americano":
-                    try
-                    {
-                        double valor;
+                        break;
+
+                    case "Dolar Americano":
+
                         double dolarAmericano = 5.18;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -228,18 +195,11 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.united_states;
                         pictureBoxPais.Visible = true;
-                    }
-                    catch (Exception ex)
-                    {
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
+                        break;
 
-                case "Dolar Canadense":
-                    try
-                    {
-                        double valor;
+                    case "Dolar Canadense":
+
                         double dolarCanadense = 4.16;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -249,18 +209,11 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.canada;
                         pictureBoxPais.Visible = true;
-                    }
-                    catch (Exception ex)
-                    {
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
+                        break;
 
-                case "Dolar Australiano":
-                    try
-                    {
-                        double valor;
+                    case "Dolar Australiano":
+
                         double dolarAustraliano = 3.88;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -270,19 +223,10 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.austallia;
                         pictureBoxPais.Visible = true;
+                        break;
 
-                    }
-                    catch (Exception ex)
-                    {
+                    case "Peso Boliviano":
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
-
-                case "Peso Boliviano":
-                    try
-                    {
-                        double valor;
                         double pesoBoliviano = 0.75;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -292,18 +236,11 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.bolivia;
                         pictureBoxPais.Visible = true;
-                    }
-                    catch (Exception ex)
-                    {
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
+                        break;
 
-                case "Coroa Sueca":
-                    try
-                    {
-                        double valor;
+                    case "Coroa Sueca":
+
                         double coraoSueca = 0.60;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -313,18 +250,11 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.sweden;
                         pictureBoxPais.Visible = true;
-                    }
-                    catch (Exception ex)
-                    {
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
+                        break;
 
-                case "Iene japones":
-                    try
-                    {
-                        double valor;
+                    case "Iene japones":
+
                         double ieneJapones = 0.047;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -334,18 +264,11 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.japan;
                         pictureBoxPais.Visible = true;
-                    }
-                    catch (Exception ex)
-                    {
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
+                        break;
 
-                case "Renminbi":
-                    try
-                    {
-                        double valor;
+                    case "Renminbi":
+
                         double renminbi = 0.80;
 
                         valor = Convert.ToDouble(txtValorReal.Text);
@@ -355,17 +278,17 @@ namespace ConversoDeMoedas1
 
                         pictureBoxPais.BackgroundImage = Properties.Resources.china;
                         pictureBoxPais.Visible = true;
-                    }
-                    catch (Exception ex)
-                    {
 
-                        MessageBox.Show("Preencha o Campo 'Valor em Real'", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
+                        break;
 
-                default:
-                    MessageBox.Show("Selecione uma moeda!","Erro", MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    break;
+                    default:
+                        MessageBox.Show("Selecione uma moeda!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Favor preencher todos os campos", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
